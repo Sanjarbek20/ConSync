@@ -28,7 +28,7 @@ const btnGroup = {
                     callback_data: "2",
                 },
                 {
-                    text: "2",
+                    text: "3",
                     callback_data: "3",
                 },
             ],
@@ -86,8 +86,7 @@ const optionBtnGroup = {
 const startGame = async (chatId) => {
     await bot.sendMessage(
         chatId,
-        `i got your location and now show it to you: and this is
-           `,
+        `do you want to play Game which is find a number: `,
         btnGroup
     );
 };
@@ -132,21 +131,20 @@ const bordCost = () => {
                 ` ^^^ YOU WIN ^^^
                 Computer chose this number is : ${obj[chatId]}
                 your chose is : ${clickedBtn}
-                `,
-                optionBtnGroup
+                `
             );
 
             await bot.sendSticker(
                 chatId,
-                "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/5d/4c/2c/5d4c2c6b-955e-5279-a124-cf981688f1af/pr_source.jpg/434x0w.webp"
+                "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/5d/4c/2c/5d4c2c6b-955e-5279-a124-cf981688f1af/pr_source.jpg/434x0w.webp",
+                optionBtnGroup
             );
         } else {
             await bot.sendMessage(
                 chatId,
                 `            *** YOU LOSE ***
                 Computer chose this number is : ${obj[chatId]}
-                your chose is : ${clickedBtn}`,
-                optionBtnGroup
+                your chose is : ${clickedBtn}`
             );
             await bot.sendSticker(
                 chatId,
